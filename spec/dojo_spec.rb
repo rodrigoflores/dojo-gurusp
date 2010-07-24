@@ -12,6 +12,12 @@ describe 'average_time_of_the_day' do
       average_time_of_the_day(["11:00pm","11:30pm"]).should == "11:15pm"
     end
   end
+  
+  describe "Any time in the same day" do
+    it "should return the simple average" do
+      average_time_of_the_day(["11:00pm","11:30pm", "11:40pm"]).should == "11:15pm"
+    end
+  end
 end
 
 
