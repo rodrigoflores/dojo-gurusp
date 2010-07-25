@@ -22,10 +22,16 @@ describe 'average_time_of_the_day' do
     
     context "with different half day" do
       it "should return the simple average" do
-        average_time_of_the_day(["11:00am", "12:00pm", "5:00pm"]).should == "02:00pm"
+        average_time_of_the_day(["11:00am", "11:00am", "12:00pm"]).should == "11:20pm"
       end
     end
   end
+  
+  describe "on different days" do
+    it "should return the simple average" do
+      average_time_of_the_day(["11:50pm", "00:10am"]).should == "12:00am"      
+    end
+  end 
   
   
 end
